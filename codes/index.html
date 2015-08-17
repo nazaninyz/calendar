@@ -1,10 +1,22 @@
 <html>
-<head></head>
+<head>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<meta name="google-signin-client_id" content="869086030322-dq2fgdch6onib996em1pcb12ga3qd99s.apps.googleusercontent.com">
+<div class="g-signin2" data-onsuccess="onSignIn">
+</head>
 <body>
-<form action='filter.php' method='post' >
-	username:<input type='text' name='name'> </br>
-    pasword:<input type='password' name='pass'> </br> 
+<div class='header'></div>
+<div class='page'>
+<div class='form'>
+<form>
+username:<input name='username' type='text'></form></br>
+password:<input name='pass' type='password'>
+<div class="g-signin2" data-onsuccess="onSignIn"><input type='submit' value='submit'></div>
 </form>
+</div>
+</div>
+<div class="footer"></div>
 </body>
 
 
