@@ -3,16 +3,17 @@ require 'db.php'
 namespace absence;
 class Calendar extends DataBase
 {
-    public $absence;
-    public $date;
+    public $absence= array();
+    public $date= array();
     public $counter;
+    public $publicHolidays;
     public function countAbsence($user)
     {
             $query="SELECT absdate,abs_id FROM user_absence where user_id=".$user." order by absdate";
             $inf=parent::Select($query);
             $i=0;
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            while ($result = $stmt->fetch()) {
+            $inf->setFetchMode(PDO::FETCH_ASSOC);
+            while ($result = $inf->fetch()) {
                 $this->counter++;
                 $this->absence[$i]=$result['abs_id'];
                 $this->date[$i]=$result['absdate'];
@@ -21,12 +22,27 @@ class Calendar extends DataBase
             echo $inf;
    
     } 
-    
-    public function setAbsence($datee, $user, $absid)
+    public function isPublicHoliday($month,$day)
+    {  
+       $sts=1;
+       $doc->Load('holidays.xml');
+       $xpath = new DOMXPath($doc);
+       $query='//month[@name='.$month.']';
+       $queryResult = $xpathvar->query($query);
+       foreach($queryResult as $result) {
+            if($day==) {
+                $sts=0;
+            }
+        }
+        return $sts;
+    }
+    public function setAbsence($day,$month, $user, $absid)
     {
-      
-             $sql="INSERT INTO user_absence (absdate, abs_id,user_is) VALUES (".$adate.','.$absid.','.$userid.")";
-             $inf=parent::Insert($query);
-             echo $inf;
+
+             if($this->isPublicHoliday($month,$day)) {
+                $sql="INSERT INTO user_absence (day,month, abs_id,user_is) VALUES (".$day.','.$month.','.$absid.','.$userid.")";
+                $inf=parent::Insert($query);
+                echo $inf;
+              }
    }
 }
