@@ -1,13 +1,15 @@
 <?php
-namespace dataBase;
-abstract class DataBase
+namespace db;
+
+use \PDO;
+class DataBase
 {
    private $conn;
    function __construct()
     {
      try {
-        $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->conn = new PDO("mysql:host=localhost;dbname=company", 'nazanin', '12345678');
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected successfully"; 
         session_start();
          } catch(PDOException $e)
@@ -17,23 +19,20 @@ abstract class DataBase
 
 
    }
-   public function Select($query)
+   public function Select($query,array $params = [])
    {
-     try {
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute();
-            $sts='done';
-        } catch(PDOException $e) { 
-               $sts=$e->getMessage();
-            }      
-    return $sts;
+     
+            $stmt = $this->conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $stmt->execute($params);
+            $inf=$stmt->fetchAll();
+ 
+    return $inf;
   }
    public function Insert($query)
    {      
       try {
-             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-             $stmt = $dbh->prepare($query);
+             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+             $stmt = $this->conn->prepare($query);
              $stmt->execute();
              $sts='done';
           } catch(PDOException $e) { 

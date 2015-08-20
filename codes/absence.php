@@ -1,6 +1,6 @@
 <?php
+namespace db;
 require 'db.php'
-namespace absence;
 class Calendar extends DataBase
 {
     public $absence= array();
