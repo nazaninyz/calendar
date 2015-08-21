@@ -19,7 +19,7 @@ class DataBase
 
 
    }
-   public function Select($query,array $params = [])
+   public function Select($query,array $params =[])
    {
      
             $stmt = $this->conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

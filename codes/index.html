@@ -1,45 +1,66 @@
-<html>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-  <script src="https://apis.google.com/js/api:client.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+   <head>
+     <meta charset=”utf-8”>
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+     <script src="https://apis.google.com/js/api:client.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+     </script>
+     <link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+
 ......................
 <script>
   var googleUser = {};
  var startApp = function() {
      gapi.load('auth2', function(){
-     // Retrieve the singleton for the GoogleAuth library and set up the client.
      auth2 = gapi.auth2.init({
        client_id: '498246396488-sq659102ssjj5mahovsqrdblrlhbit9n.apps.googleusercontent.com',
        cookiepolicy: 'single_host_origin',
-       // fetch_basic_profile: false,
-       // scope: 'profile'
-     });
+    });
      attachSignin(document.getElementById('customBtn'));
    });
-   
- };
-
+}
  function attachSignin(element) {
 
 
-         console.log(element.id);
-   auth2.attachClickHandler(element, {},
-           function(googleUser) {
-              var userID=googleUser.getBasicProfile().getEmail();
-              alert(userID);  
-              $.ajax({
-                url: 'lead.php',
-                type: 'post',
-                data: {userID: userID},
-                success: function(response) { 
-                      alert(response); }
-                 });
-          },
-         function(error) {
-              alert(JSON.stringify(error, undefined, 2));
-              }) 
+        // console.log(element.id);
+        // auth2.attachClickHandler(element, {},
+        // function(googleUser) {
+         //   var userID=googleUser.getBasicProfile().getEmail(); 
+            //  $.ajax({
+              // url: 'lead.php',
+               //type: 'post',
+              //  data: {userID: userID},
+               // success: function(response) { 
+                //      localStorage.setItem('myMainKey', userID);
+                  //    window.location.href = "main.html"; 
+              //  } })
+         // },
+        // function(error) {
+          //    alert(JSON.stringify(error, undefined, 2));
+            //  }) 
+
+  $('#customBtn').click(function() { 
+    auth2.grantOfflineAccess({'redirect_uri': 'postmessage'}).then(signInCallback);});
  }
+  function signInCallback(authResult) {
+  if (authResult['code']) {
+    // Hide the sign-in button now that the user is authorized, for example:
+    $('#customBtn').attr('style', 'display: none');
+    // Send the code to the server
+    $.ajax({
+      type: 'POST',
+      url: 'lead.php',
+      contentType: 'application/octet-stream; charset=utf-8',
+      //data: {userID: userID,code: code},
+      success: function(result) { alert('yess');
+      },
+      processData: false,
+      data: authResult['code']
+    });
+  } else {
+    alert('wrong');
+  }}
 
   
   </script>
@@ -47,7 +68,7 @@
     #customBtn {
       display: inline-block;
       background: #4285f4;
-      color: white;
+      color: black;
       width: 190px;
       border-radius: 5px;
       white-space: nowrap;
@@ -77,32 +98,29 @@
       font-family: 'Roboto', sans-serif;
     }
   </style>
-  <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-      document.getElementById('name').innerText = "Signed out";
-    });
-  }
-</script>
+
 .........................
 </head>
 <body>
-<div class='header'></div>
-<div class='page'>
- <div id="gSignInWrapper">
-    <span class="label">Sign in with:</span>
-    <div id="customBtn" class="customGPlusSignIn">
-      <span class="icon"></span>
-      <span class="buttonText">Google</span>
-    </div>
-  </div>
-  <div id="name"></div>
-  <script>startApp();</script>
-</div>
-<div class="footer"></div>
+   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+   <div class="container">
+   <h1><a href="#">3FS.SI</a></h1>
+          <div class="row">
+            <div class="span4">
+            </div>
+            <div class="span8">
+              <div id="gSignInWrapper">
+      <span class="label">Sign in with:</span>
+      <div id="customBtn" class="customGPlusSignIn">
+         <span class="icon"></span>
+         <span class="buttonText" >Google</span>
+      </div>
+   </div>
+            </div>
+          </div>
+   <script>startApp();</script>
+   </div>
 </body>
 
 
