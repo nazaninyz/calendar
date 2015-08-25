@@ -6,25 +6,22 @@ class users extends DataBase
 public $userInf= array();
 public function userInformation($uid)
 {
-  $query="select * from user where id=$uid";
-  $obj= new DataBase();
-  $inf=$obj->Select($query);
-  $inf->setFetchMode(PDO::FETCH_ASSOC);
+  $query="select * from user where user_id like :uid";
+  $params= array (':uid' => $uid);
+  $inf=parent::Select($query,$params);
   $i=0;
-  while ($result = $inf->fetch()) {
-    $this->userInf[$i]=$result['id'];
-    $this->userInf[$i]=$result['user_id'];
-    $this->userInf[$i]=$result['username'];
+    $this->userInf[$i]=$inf['id'];
+    $this->userInf[$i]=$inf['user_id'];
+    $this->userInf[$i]=$inf['username'];
     $i++;
-   }
-  return $inf;
+  return $this->userInf;
 }
 public function userExist($uid)
 {
   $sts=false;
-  $query='select * from user where user_id like :userid';
-  $params= array (":uid" => $uid);
-  $inf=parent::Select($query,$params);echo $inf;
+  $query='select * from user where user_id like :uid';
+  $params= array (':uid' => $uid);
+  $inf=parent::Select($query,$params);
   if(sizeof($inf))
   {
     $sts=true;

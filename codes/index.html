@@ -23,10 +23,21 @@
  function attachSignin(element) {
 
 
-        // console.log(element.id);
-        // auth2.attachClickHandler(element, {},
-        // function(googleUser) {
-         //   var userID=googleUser.getBasicProfile().getEmail(); 
+         console.log(element.id);
+         auth2.attachClickHandler(element, {},
+         function(googleUser) {
+          // auth2.grantOfflineAccess({'redirect_uri': 'postmessage'}).then(signInCallback);
+            var userID= googleUser.getBasicProfile().getEmail(); 
+            var id_token = googleUser.getAuthResponse().id_token;
+                $.ajax({
+                  type: 'POST',
+                  url: 'lead.php',
+                  //contentType: 'application/octet-stream; charset=utf-8',
+                  data: {id_token: id_token,userID: userID},
+                  success: function(result) { alert(result); window.location.href = "main.php";  },
+                //  processData: false,
+              //  data: authResult['code']
+    })},
             //  $.ajax({
               // url: 'lead.php',
                //type: 'post',
@@ -36,32 +47,24 @@
                   //    window.location.href = "main.html"; 
               //  } })
          // },
-        // function(error) {
-          //    alert(JSON.stringify(error, undefined, 2));
-            //  }) 
+         function(error) {
+              alert(JSON.stringify(error, undefined, 2));
+              });} 
+ // function signInCallback(authResult) {
+//  if (authResult['code']) {
+ //   // Hide the sign-in button now that the user is authorized, for example:
+ //   $('#customBtn').attr('style', 'display: none');
+//  }else {
+//    alert('wrong');
+//  }
+//}
 
-  $('#customBtn').click(function() { 
-    auth2.grantOfflineAccess({'redirect_uri': 'postmessage'}).then(signInCallback);});
- }
-  function signInCallback(authResult) {
-  if (authResult['code']) {
-    // Hide the sign-in button now that the user is authorized, for example:
-    $('#customBtn').attr('style', 'display: none');
-    // Send the code to the server
-    $.ajax({
-      type: 'POST',
-      url: 'lead.php',
-      contentType: 'application/octet-stream; charset=utf-8',
-      //data: {userID: userID,code: code},
-      success: function(result) { alert('yess');
-      },
-      processData: false,
-      data: authResult['code']
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
     });
-  } else {
-    alert('wrong');
-  }}
-
+  }
   
   </script>
   <style type="text/css">
@@ -119,6 +122,7 @@
    </div>
             </div>
           </div>
+          <a href="#" onclick="signOut();">Sign out</a>
    <script>startApp();</script>
    </div>
 </body>

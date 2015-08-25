@@ -1,14 +1,16 @@
-<?php
-require 'users.php';
-if(isset($_POST['code'])&&sset($_POST['userID']))  {
+<?php 
+session_start();
+require "users.php";
+if(isset($_POST["id_token"])&&isset($_POST["userID"]))  {
     $uid = $_POST['userID'];
+    $_SESSION['name']=$uid;
     $obj=new db\users();
     $result=$obj->userExist($uid);
     if($result) {
        echo'welcome';
     }
 }
-?>
-<html>
-
-</html>
+else
+{
+	echo 'kkk';
+}
