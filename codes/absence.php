@@ -9,7 +9,8 @@ class Calendar extends DataBase
     public $publicHolidays;
     public function countAbsence($user)
     {
-            $query="SELECT absdate,abs_id FROM user_absence where user_id=".$user." order by absdate";
+            $query="SELECT absdate,abs_id FROM user_absence where user_id like :user order by absdate";
+            
             $inf=parent::Select($query);
             $i=0;
             $inf->setFetchMode(PDO::FETCH_ASSOC);
