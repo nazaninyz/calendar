@@ -5,11 +5,28 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title></title>
+  <meta name="description" content="Full view calendar component for twitter bootstrap with year, month, week, day views.">
+  <meta name="keywords" content="jQuery,Bootstrap,Calendar,HTML,CSS,JavaScript,responsive,month,week,year,day">
+  <meta name="author" content="Serhioromano">
+  <meta charset="UTF-8">
   <link href="css/bootstrap.min.css" rel="stylesheet" media='screen' />
- 
-    <link rel="stylesheet" href="demo/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="Script/calendar.js"></script>
+  <link rel="stylesheet" href="components/bootstrap2/css/bootstrap.css">
+  <link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  </head>
+    <script src="Script/jquery-2.1.3.min.js"></script>
+  <script src="Script/bootstrap.min.js"></script>
+    <style type="text/css">
+    .btn-twitter {
+      padding-left: 30px;
+      background: rgba(0, 0, 0, 0) url(https://platform.twitter.com/widgets/images/btn.27237bab4db188ca749164efd38861b0.png) -20px 6px no-repeat;
+      background-position: -20px 11px !important;
+    }
+    .btn-twitter:hover {
+      background-position:  -20px -18px !important;
+    }
+  </style>
 </head>
 <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -60,29 +77,70 @@ session_start();
   </nav>
 
 
+<div class="container">
+  <div class="hero-unit">
+  <div class="page-header">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4"><h3>Welcome</h3>
-            <h1>SuperCal Examples</h1>
-            <h2>Basic example</h2>
-           <p>Simple calendar widget with default options</p>
-
-            <div class="example1"></div>
+    <div class="pull-right form-inline">
+      <div class="btn-group">
+        <button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
+        <button class="btn" data-calendar-nav="today">Today</button>
+        <button class="btn btn-primary" data-calendar-nav="next">Next >></button>
       </div>
-
-      <div class="col-xs-12 col-md-8"><h3>Second</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus magna vitae velit ullamcorper, vel pellentesque arcu malesuada. Curabitur eros magna, blandit finibus sagittis sed, tincidunt placerat nisl. Integer quis dolor dui. Curabitur tempus purus metus, non bibendum erat condimentum sed. Fusce eget tellus est.</div>
-      
+      <div class="btn-group">
+        <button class="btn btn-warning" data-calendar-view="year">Year</button>
+        <button class="btn btn-warning active" data-calendar-view="month">Month</button>
+        <button class="btn btn-warning" data-calendar-view="week">Week</button>
+        <button class="btn btn-warning" data-calendar-view="day">Day</button>
+      </div>
     </div>
+
+ 
+         
+
+    <h3></h3>
+    <small>To see example with events navigate to march 2013</small>
   </div>
-  <script src="Script/jquery-2.1.3.min.js"></script>
-  <script src="Script/bootstrap.min.js"></script>
-  <script src="demo/jquery-1.9.1.js"></script>
-  <script src="jquery.supercal.js"></script>
-  <script>
-      $('.example1').supercal({
-        transition: 'carousel-vertical'
-      });
+    <div class="row">
+    <div class="span9">
+      <div id="calendar"></div>
+    </div>
+
+<div class="well">
+  <div id="datetimepicker4" class="input-append">
+    <input data-format="yyyy-MM-dd" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+</div>
+    </div>
+    </div>
+  <script >
+     var startApp = function()
+   {
+      $.ajax ({
+        url: 'befabsence.php',
+        success: function(result) { alert(result);  },
+      })
+   }
   </script>
+  <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('#datetimepicker2').datetimepicker({
+      language: 'en',
+      pick12HourFormat: true
+    });
+  });
+</script>
+
 </body>
 </html>

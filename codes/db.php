@@ -28,12 +28,11 @@ class DataBase
  
     return $inf;
   }
-   public function Insert($query)
+   public function Insert($query, array $params=[])
    {      
       try {
-             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-             $stmt = $this->conn->prepare($query);
-             $stmt->execute();
+             $stmt = $this->conn->prepare($query, PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+             $stmt->execute($params);
              $sts='done';
           } catch(PDOException $e) { 
                $sts=$e->getMessage();

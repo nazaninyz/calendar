@@ -1,24 +1,22 @@
 <?php
 namespace db;
 require 'db.php'
+session_start();
 class Calendar extends DataBase
 {
     public $absence= array();
     public $date= array();
     public $counter;
     public $publicHolidays;
-    public function countAbsence($user)
+    public function countAbsence()
     {
             $query="SELECT absdate,abs_id FROM user_absence where user_id like :user order by absdate";
-            
-            $inf=parent::Select($query);
+            $params= array(':user'=> $_SESSION['name']);
+            $inf=parent::Select($query,$params);
             $i=0;
-            $inf->setFetchMode(PDO::FETCH_ASSOC);
             while ($result = $inf->fetch()) {
-                $this->counter++;
                 $this->absence[$i]=$result['abs_id'];
                 $this->date[$i]=$result['absdate'];
-                $i++;
             }
             echo $inf;
    
@@ -37,12 +35,13 @@ class Calendar extends DataBase
         }
         return $sts;
     }
-    public function setAbsence($day,$month, $user, $absid)
+    public function setAbsence($day, $month, $absid)
     {
 
              if($this->isPublicHoliday($month,$day)) {
-                $sql="INSERT INTO user_absence (day,month, abs_id,user_is) VALUES (".$day.','.$month.','.$absid.','.$userid.")";
-                $inf=parent::Insert($query);
+                $sql="INSERT INTO user_absence (day, month, abs_id, user_is) VALUES :day, :month, :absid, :userid";
+                $params= array (':day' => $day, ':month'=$month => , ':absid'=>$absid ,':userid' =>$_SESSION['name']);
+                $inf=parent::Insert($query,$params);
                 echo $inf;
               }
    }

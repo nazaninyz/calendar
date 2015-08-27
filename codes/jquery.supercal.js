@@ -286,6 +286,7 @@
 
 				return footer;
 			},
+			
 			// Split out into helper object
 			formatDate: function(date, options) {		// Verrrry primitive date format function. Does what it needs to do...
 				return options.format
@@ -355,7 +356,7 @@
 						var element = $('<div />');
 
 						$(this).addClass('supercal-target').after(element);
-					} else {
+			 	 } else {
 						var element = this;
 					}
 
