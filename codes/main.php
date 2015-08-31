@@ -14,6 +14,15 @@ session_start();
   <link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
   <link rel="stylesheet" href="css/calendar.css">
   <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
   </head>
     <script src="Script/jquery-2.1.3.min.js"></script>
   <script src="Script/bootstrap.min.js"></script>
@@ -104,17 +113,17 @@ session_start();
     <div class="row">
     <div class="span9">
       <div id="calendar"></div>
+      Event:</br>
+      <select class="selectpicker" id='event' >
+      <option>illness</option>
+      <option>vacation</option>
+      <option>personal</option>
+  </select></br>
+       Date:</br>
+      <input type="text" id="datepicker"></br>
+      <button type="button" id ='submit'class="btn btn-default">submit</button><p id='stage'></p>
     </div>
 
-<div class="well">
-  <div id="datetimepicker4" class="input-append">
-    <input data-format="yyyy-MM-dd" type="text"></input>
-    <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-      </i>
-    </span>
-  </div>
-</div>
     </div>
     </div>
   <script >
@@ -125,22 +134,26 @@ session_start();
         success: function(result) { alert(result);  },
       })
    }
+      $(document).ready(function() {
+            $("#submit").click(function(event){
+               var date = $("#datepicker").val();
+               var absence = $("#event").val();
+               $('#stage').load('befabsence.php', {'date':date,'absence':absence});
+
+            });
+         });
+
   </script>
   <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
   <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript">
-  $(function() {
-    $('#datetimepicker2').datetimepicker({
-      language: 'en',
-      pick12HourFormat: true
-    });
-  });
-</script>
+    $('#datepicker').datepicker('show');
+  </script>
 
 </body>
 </html>

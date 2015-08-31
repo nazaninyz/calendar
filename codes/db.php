@@ -31,7 +31,7 @@ class DataBase
    public function Insert($query, array $params=[])
    {      
       try {
-             $stmt = $this->conn->prepare($query, PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+             $stmt = $this->conn->prepare($query, array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION));
              $stmt->execute($params);
              $sts='done';
           } catch(PDOException $e) { 
