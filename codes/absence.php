@@ -21,29 +21,46 @@ class Calendar extends DataBase
             echo $inf;
    
     } 
-    public function isPublicHoliday($month,$day)
+    public function isPublicHoliday($date)
     {  
        $sts=1;
+       $date=explode('/',$date);
+       $day=(int)$date[1];
+       $month=(int)$date[0];
        $doc = new  \DOMDocument();
        $doc->Load('holidays.xml');
-       $xpath = new \DOMXPath($doc);
+       $xpath = new DOMXPath($doc);
        $query='//month[@name='.$month.']';
        $queryResult = $xpath->query($query);
-       foreach($queryResult as $day) {
+       foreach($queryResult as $result) {
+        var_dump($queryResult->day);
             if($day == $queryResult->day ) {
                 $sts=0;
             }
         }
         return $sts;
     }
-    public function setAbsence($month, $day, $year, $absid, $userid)
+    public function setAbsence($datee, $absid)
     {
 
-             if($this->isPublicHoliday($month,$day)) {
-                $sql="INSERT INTO user_absence (day, month, year, abs_id, user_id) VALUES (:day, :month, :year, :absid, :userid )" ;
-                $params= array(':day' => $day, ':month'=>$month  ,':year'=>$year ,':absid'=>$absid ,':userid' =>$userid);
+             if($this->isPublicHoliday($datee)) {
+                $userid=$_SESSION['id'];
+                $sql="INSERT INTO user_absence (datee, abs_id, user_id) VALUES (:datee, :absid, :userid )" ;
+                $params= array(':datee' => $datee ,':absid'=>$absid ,':userid' =>$userid);
                 $inf=parent::Insert($sql,$params);
                 echo $inf;
               }
+            else {
+              echo "public holiday";
+            }
+   }
+   public function getAbsId ($absname)
+   {
+      $query='SELECT id from absence where kind LIKE :absname';
+      $params= array(':absname' => $absname);
+      $inf=parent::Select($query,$params);
+      var_dump($inf);
+      $Aid=(int)$inf[0];
+      return $Aid;
    }
 }

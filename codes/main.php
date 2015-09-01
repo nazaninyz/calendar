@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
+
   <script>
   $(function() {
     $( "#datepicker" ).datepicker();
@@ -126,6 +126,41 @@ session_start();
 
     </div>
     </div>
+
+<div id="fullCalModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                <h4 id="modalTitle" class="modal-title"></h4>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() { 
+    $('#bootstrapModalFullCalendar').fullCalendar({
+        events: '/hackyjson/cal/',
+        header: {
+            left: '',
+            center: 'prev title next',
+            right: ''
+        },
+        eventClick:  function(event, jsEvent, view) {
+            $('#modalTitle').html(event.title);
+            $('#modalBody').html(event.description);
+            $('#eventUrl').attr('href',event.url);
+            $('#fullCalModal').modal();
+        }
+    });
+});
+</script>
+
   <script >
      var startApp = function()
    {
@@ -143,6 +178,7 @@ session_start();
             });
          });
 
+
   </script>
   <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
@@ -151,6 +187,8 @@ session_start();
   <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
   <script type="text/javascript" src="js/calendar.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.js"></script> 
   <script type="text/javascript">
     $('#datepicker').datepicker('show');
   </script>

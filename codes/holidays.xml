@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <publicholiday>
-	<month name='January'>
+	<month name='1'>
      <day>1</day>
     </month>
-	<month name='February'>
+	<month name='2'>
      <day>8</day>
     </month>
-    <month name='April'>
+    <month name='4'>
      <day>6</day>
      <day>27</day>
     </month>
-    <month name='May'>
+    <month name='5'>
      <day>1</day>
      <day>2</day>
      <day>24</day>
     </month>
-    <month name='June'>
+    <month name='6'>
      <day>25</day>
     </month>
-    <month name='August'>
+    <month name='8'>
      <day>15</day>
      <day>17</day>
     </month>
-    <month name='September'>
+    <month name='9'>
      <day>15</day>
     </month>
-    <month name='October'>
+    <month name='10'>
      <day>31</day>
     </month>
-     <month name='November'>
+     <month name='11'>
      <day>1</day>
      <day>23</day>
     </month>
-    <month name='December'>
+    <month name='12'>
      <day>25</day>
      <day>26</day>
     </month>
