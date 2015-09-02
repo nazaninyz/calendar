@@ -61,7 +61,7 @@ session_start();
 
     <!-- Header -->
     <a name="about"></a>
-    <?php echo  "<p>". $_SESSION['id']."</p>"; ?>
+    <?php echo  "heeeeey<p>". $_SESSION['userid']."</p>"; ?>
     <div class="intro-header">
         <div class="container">
             <div class="row">
@@ -82,7 +82,7 @@ session_start();
                                 
                             </li>
                             <li>
-                               <button type="button" id ='submit'class="btn btn-default"> submit </button><p id='stage'></p>
+                               <button type="button" id ='submit'class="btn btn-default"> submit </button><p id='stage' style='color:black;'></p>
                            </li>
                         </ul>
                     </div>
@@ -119,7 +119,7 @@ session_start();
          });
       $(document).ready(function() {
            $("#ill").mouseover(function(event){
-               var id = 'ill';
+               var id = 'illness';
                $('#stage').load('showAbsence.php',{'id':id});
 
             });

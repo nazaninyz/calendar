@@ -1,5 +1,5 @@
 <?php 
-session_start();
+session_start();    session_regenerate_id();
 require "users.php";
 if(isset($_POST["id_token"])&&isset($_POST["userID"]))  {
     $uid = $_POST['userID'];
@@ -7,9 +7,11 @@ if(isset($_POST["id_token"])&&isset($_POST["userID"]))  {
     $result=$obj->userExist($uid);
     if($result) {
        echo'welcome';
+   
+
        $_SESSION['name']=$uid;
-       var_dump($obj->getUserId());
-       $_SESSION['id']=$obj->getUserId();
+       $_SESSION['userid']=$obj->getUserId();
+       //echo $_SESSION['userid'];
     }
 }
 else
