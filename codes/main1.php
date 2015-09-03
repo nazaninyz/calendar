@@ -44,24 +44,11 @@ session_start();
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Profile</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Absence <b class="caret" id='showEvent'></b></a>
-                <ul class="dropdown-menu">
-                    <li ><a href="#" id='ill'>illness</a></li>
-                    <li ><a href="#" id='vacation'>vacation</a></li>
-                    <li ><a href="#" id='personal'>personal</a></li>
-               </ul>
-          </li>
+          <li class="active"><a href="abspage.php">absence</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-
-
-    <!-- Header -->
-    <a name="about"></a>
-    <?php echo  "heeeeey<p>". $_SESSION['userid']."</p>"; ?>
     <div class="intro-header">
         <div class="container">
             <div class="row">
@@ -93,14 +80,7 @@ session_start();
         <!-- /.container -->
 
     </div>
-    <!-- /.intro-header -->
-
-    <!-- Page Content -->
-
   <a  name="services"></a>
-
-
-
   <script >
      var startApp = function()
    {
@@ -117,27 +97,7 @@ session_start();
 
             });
          });
-      $(document).ready(function() {
-           $("#ill").mouseover(function(event){
-               var id = 'illness';
-               $('#stage').load('showAbsence.php',{'id':id});
-
-            });
-         });
-      $(document).ready(function() {
-           $("#vacation").mouseover(function(event){
-               var id = 'vacation';
-               $('#stage').load('showAbsence.php',{'id':id});
-
-            });
-         });
-      $(document).ready(function() {
-           $("#personal").mouseover(function(event){
-               var id = 'personal';
-               $('#stage').load('showAbsence.php',{'id':id});
-
-            });
-         });
+    
   </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -149,7 +109,6 @@ session_start();
     $( "#datepicker" ).datepicker();
   });
   </script>
-
   <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
   <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>

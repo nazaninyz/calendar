@@ -67,20 +67,21 @@ class Calendar extends DataBase
       $query='SELECT id from absence where kind LIKE :absname';
       $params= array(':absname' => $absname);
       $inf=parent::Select($query,$params);
-      $num=$inf[0];
-      $Aid=(int)$num;
-       var_dump($Aid);
+      foreach($inf as $row) {
+        $row=$inf;
+      }
+      $Aid=$row['id'];
       return $Aid;
    }
 
 
 
  public function getAbsence($absence) {
-       $absid= $this->getAbsId($absence);
-       $userid=$_SESSION['userid'];
+       $absid = $this->getAbsId($absence);
+       $userid = $_SESSION['userid'];
        var_dump($absid);
-       $query='SELECT * from user_absence where user_id LIKE :userid AND abs_id LIKE :absid ORDER BY datee limit 3';
-       $params= array(':absid' => $absid, 'userid' => $userid);
+       $query ='SELECT * from user_absence where user_id LIKE :userid AND abs_id LIKE :absid ORDER BY datee limit 3';
+       $params = array(':absid' => $absid, 'userid' => $userid);
        $inf = parent::Select($query,$params);
        //echo "this id :".$inf;
        return $inf;

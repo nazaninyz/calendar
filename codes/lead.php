@@ -6,7 +6,7 @@ if(isset($_POST["id_token"])&&isset($_POST["userID"]))  {
     $obj=new db\users();
     $result=$obj->userExist($uid);
     if($result) {
-       echo'welcome';
+     //  echo'welcome';
    
 
        $_SESSION['name']=$uid;

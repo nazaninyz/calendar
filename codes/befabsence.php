@@ -7,7 +7,7 @@ require 'absence.php';
       
        $date=$_REQUEST['date'];
        $result=$obj->setAbsence($date, $event);
-       echo $result;
+     //  echo $result;
     }
 
 

@@ -10,7 +10,7 @@ class DataBase
      try {
         $this->conn = new PDO("mysql:host=localhost;dbname=company", 'nazanin', '12345678');
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully"; 
+       // echo "Connected successfully"; 
      //   session_start();
          } catch(PDOException $e)
           {
@@ -24,8 +24,7 @@ class DataBase
      
             $stmt = $this->conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $stmt->execute($params);
-            $inf=$stmt->fetchAll();
- 
+            $inf = $stmt->fetch(PDO::FETCH_ASSOC);
     return $inf;
   }
    public function Insert($query, array $params=[])
