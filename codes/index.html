@@ -19,44 +19,20 @@
    });
 }
  function attachSignin(element) {
-
-
          console.log(element.id);
          auth2.attachClickHandler(element, {},
          function(googleUser) {
-          // auth2.grantOfflineAccess({'redirect_uri': 'postmessage'}).then(signInCallback);
             var userID= googleUser.getBasicProfile().getEmail(); 
             var id_token = googleUser.getAuthResponse().id_token;
                 $.ajax({
                   type: 'POST',
                   url: 'lead.php',
-                  //contentType: 'application/octet-stream; charset=utf-8',
                   data: {id_token: id_token,userID: userID},
                   success: function(result) { alert(result); window.location.href = "main1.php";  },
-                //  processData: false,
-              //  data: authResult['code']
     })},
-            //  $.ajax({
-              // url: 'lead.php',
-               //type: 'post',
-              //  data: {userID: userID},
-               // success: function(response) { 
-                //      localStorage.setItem('myMainKey', userID);
-                  //    window.location.href = "main.html"; 
-              //  } })
-         // },
          function(error) {
               alert(JSON.stringify(error, undefined, 2));
               });} 
- // function signInCallback(authResult) {
-//  if (authResult['code']) {
- //   // Hide the sign-in button now that the user is authorized, for example:
- //   $('#customBtn').attr('style', 'display: none');
-//  }else {
-//    alert('wrong');
-//  }
-//}
-
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
@@ -95,7 +71,6 @@
       padding-right: 42px;
       font-size: 14px;
       font-weight: bold;
-      /* Use the Roboto font that is loaded in the <head> */
       font-family: 'Roboto', sans-serif;
     }
   </style>

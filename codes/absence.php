@@ -27,17 +27,10 @@ class Calendar extends DataBase
        $date=explode('/',$date);
        $day=(int)$date[1];
        $month=(int)$date[0];
-      // $doc = new  \DOMDocument();
-      // $doc->Load('holidays.xml');
-      // $xml=simplexml_load_file("holidays.xml");
-     //  $xpath = new \DOMXPath($doc);
-     //  $query='//month[@name='.$month.']';
-     //  $queryResult = $xpath->query($query);
        $xml = simplexml_load_file("holidays.xml");
        $query='//month[@name='.$month.']';
        $result = $xml->xpath($query);
        foreach($result as $row) {
-       // var_dump($queryResult->day);
             if($day == $row->day ) {
                 $sts=0;
             }
@@ -51,11 +44,24 @@ class Calendar extends DataBase
 
              if($this->isPublicHoliday($datee)) {
                 $userid=$_SESSION['userid'];
-                $Aid=$this->getAbsId($absid);
-                $sql="INSERT INTO user_absence (datee, abs_id, user_id) VALUES (:datee, :Aid, :userid )" ;
-                $params= array(':datee' => $datee ,':Aid'=>$Aid ,':userid' =>$userid);
-                $inf=parent::Insert($sql,$params);
-                echo $inf;
+                $date=explode('/',$datee);
+                $month=(int)$date[0];
+                $day=(int)$date[1];
+                $year=(int)$date[2];
+                $query='SELECT user_id from user_absence where user_id like :userid and month like :month and day like :day and year like :year';
+                $params= array(':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
+                $sts=parent::Select($query, $params);
+                if(!$sts) {
+                   $Aid=$this->getAbsId($absid);
+                   $sql="INSERT INTO user_absence (datee,month,year,abs_id, user_id, day) VALUES (:datee, :month, :year, :Aid, :userid, :day)";
+                   $params= array(':datee' => $datee ,':Aid'=>$Aid ,':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
+                   $inf=parent::Insert($sql,$params);
+                   echo $inf;
+                }
+                else {
+                  echo "inserted before";
+                }
+
               }
             else {
               echo "public holiday";
@@ -70,20 +76,20 @@ class Calendar extends DataBase
       foreach($inf as $row) {
         $row=$inf;
       }
-      $Aid=$row['id'];
+      $Aid=(int)$row['id'];
       return $Aid;
    }
 
 
 
- public function getAbsence($absence) {
+ public function getAbsence($absence, $month, $year) {
        $absid = $this->getAbsId($absence);
+       echo $absid;
+       echo $month;
        $userid = $_SESSION['userid'];
-       var_dump($absid);
-       $query ='SELECT * from user_absence where user_id LIKE :userid AND abs_id LIKE :absid ORDER BY datee limit 3';
-       $params = array(':absid' => $absid, 'userid' => $userid);
+       $query ='SELECT * from user_absence where user_id LIKE :userid AND abs_id LIKE :absid AND month LIKE :month AND year LIKE :year ORDER BY day limit 5';
+       $params = array(':absid' => $absid, ':userid' => $userid, ':year' => $year, ':month' => $month);
        $inf = parent::Select($query,$params);
-       //echo "this id :".$inf;
        return $inf;
 }
 }

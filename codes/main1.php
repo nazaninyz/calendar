@@ -14,10 +14,7 @@ session_start();
   <link rel="stylesheet" href="css/datepicker.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -30,7 +27,6 @@ session_start();
    
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -40,14 +36,12 @@ session_start();
         </button>
         <a class="navbar-brand" href="#">3FS.SI</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Profile</a></li>
           <li class="active"><a href="abspage.php">absence</a></li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
   </nav>
     <div class="intro-header">
         <div class="container">
@@ -77,8 +71,6 @@ session_start();
             </div>
 
         </div>
-        <!-- /.container -->
-
     </div>
   <a  name="services"></a>
   <script >
@@ -97,7 +89,6 @@ session_start();
 
             });
          });
-    
   </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

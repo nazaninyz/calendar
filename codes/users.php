@@ -34,8 +34,10 @@ public function getUserId()
        $query='SELECT id from user where user_id like :userid ';
        $params= array(':userid'=> $_SESSION['name']);
        $user_id=parent::Select($query,$params);
-       foreach($user_id as $row)
-       $Uid=(int)$row['id'];
-       return $Uid;
+       foreach($user_id as $row) {
+        $row=$user_id;
+      }
+       $Uid=$row['id'];
+      return $Uid;
 }
 }
