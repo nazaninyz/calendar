@@ -84,10 +84,8 @@ class Calendar extends DataBase
 
  public function getAbsence($absence, $month, $year) {
        $absid = $this->getAbsId($absence);
-       echo $absid;
-       echo $month;
        $userid = $_SESSION['userid'];
-       $query ='SELECT * from user_absence where user_id LIKE :userid AND abs_id LIKE :absid AND month LIKE :month AND year LIKE :year ORDER BY day limit 5';
+       $query ='SELECT datee from user_absence where user_id LIKE :userid AND abs_id LIKE :absid AND month LIKE :month AND year LIKE :year ';
        $params = array(':absid' => $absid, ':userid' => $userid, ':year' => $year, ':month' => $month);
        $inf = parent::Select($query,$params);
        return $inf;
