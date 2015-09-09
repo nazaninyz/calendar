@@ -1,27 +1,26 @@
 <?php
 session_start();
 require 'absence.php';
-echo 'hi';
-if(isset($_POST['id']) && isset($_POST['slide'])) {
-       $absence = $_POST['id'];
-       $userid = $_SESSION['userid'];
-       $month=$_POST['slide'];
+if(isset($_GET['id']) && isset($_GET['slide'])) {
+       $absence = $_GET['id'];
+       $month=$_GET['slide'];
        $year=date('Y');
        $obj = new db\calendar();
        $inf = $obj->getAbsence($absence,$month,$year);
        $makes= array();  
        $row = array();
+       //var_dump($inf);
       if (is_array($inf)) {
               foreach($inf as $row) {
-                 $row = $inf;
-                 $makes[] = array(
-                 'date' => $row['datee']
+              	   
+              	   $makes [] = array(
+                     'date' => $row['datee']
                );
               }
-              var_dump($row);
-              echo 'hiii';
-              header('content-type:application/json');
-              echo json_encode($makes);
+            //  var_dump($makes);
+            //  header('content-type:application/json');
+             echo json_encode($makes);
+            //     var_dump($row);
        }
        
 

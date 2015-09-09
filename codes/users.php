@@ -35,9 +35,9 @@ public function getUserId()
        $params= array(':userid'=> $_SESSION['name']);
        $user_id=parent::Select($query,$params);
        foreach($user_id as $row) {
-        $row=$user_id;
+        $Uid=$row['id'];
       }
-       $Uid=$row['id'];
+       
       return $Uid;
 }
 }

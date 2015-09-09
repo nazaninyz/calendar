@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1200x315" alt="...">
+      <img src="sept.jpg" alt="...">
       <div class="carousel-caption">
         
       </div>
@@ -84,13 +84,13 @@
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1200x315" alt="...">
+      <img src="nov.jpg" alt="...">
       <div class="carousel-caption">
           
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1200x315" alt="...">
+      <img src="12.png" alt="...">
       <div class="carousel-caption">  
       </div>
     </div>
@@ -104,25 +104,20 @@
 <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
   <span class="glyphicon glyphicon-chevron-left"></span>
 </a>
-     <div class="dropdown" style='margin-top:20px;'>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-md-4'>
-                <select class="selectpicker abs" id='illness'>
-                </select>
-            </div> 
-            <div class='col-md-4'>
-                 <select class="selectpicker abs" id='vacation'>
-                 </select>
-            </div>
-            <div class='col-md-4'>
-                <select class="selectpicker abs" id='personal'>
-                </select>
-            </div>
-            </div> 
-          </div>
-        </div>
-     </div>
+<div class='conrainer'>
+ <div class="row">
+  <div class='col-md-2'>
+  <button type="button" class="btn btn-default abs"  style='margin-top:20px;' id='illness'>illness</button></br>
+  <button type="button" class="btn btn-default abs" style='margin-top:20px;' id='personal' >personal</button>
+  <button type="button" class="btn btn-default abs" style='margin-top:20px;' id='vacation'>vacation</button>
+  </div>
+  <div class='col-md-10'>
+  	  <select class="selectpicker" style='margin-top:85px; width:400px;' id='select'>
+      </select>
+  </div>
+</div>
+
+</div>
      <p id='info'></p>
 </div>
    
@@ -148,37 +143,40 @@
                    slide= $('div.active').index() + 1;;
                    break;
                  }
-               }
+               }//alert(id);
                if(id != 0) {
-                alert(id);
-                alert(slide);
+                
+              //  alert(slide);
                  $.ajax({
-                   type: 'post',
+                   type: 'get',
                     url: 'showAbsence.php',
                    data: {id: id, slide: slide},
-                   contentType: 'application/json; charset=utf-8',
-                  // dataType : 'json',
-                //   error: function(jqXHR, textStatus, errorThrown) {
-                //    if (jqXHR.status == 500) {
-                 //      alert('Internal error: ' + jqXHR.responseText);
-                 //   } else {
-                 //      alert('Unexpected error.');
-                 //     }
-                 //  },
+                  // contentType: 'application/json; charset=utf-8',
+                   dataType: 'json',
+                   async : false,
+                   error: function(jqXHR, textStatus, errorThrown) {
+                    if (jqXHR.status == 500) {
+                       alert('Internal error: ' + jqXHR.responseText);
+                   } else {
+                       alert('Unexpected error.');
+                     }
+                   },
                    success: function(data){
-                    alert('hh');
-                    alert(data);
-                        $('#illness').append("option value='0'>--date--</option>");
-                         alert('hh');
-                        $.each(data,function(i,item) {
-                        $(id).append('<option value="'+data[i].date+'></option>');
-                        })
+                   // alert('hh');
+                    //alert(data);
+                        $('#select').empty();
+                        $('#select').append("<option value='0'>--date--</option>");
+                 //       $('#select').append('<option'+data[0].date+'></option>');
+                         
+                        $.each(data,function(i,item) { 
+                       $('#select').append('<option>'+data[i].date+'</option>');
+                       })
                      
                 }
 
             })
              }   
-         });
+         }); 
 
      })
 
@@ -187,6 +185,7 @@
     $('.carousel').carousel({
         interval: false
     });
+
    </script>
 </body>
 </html>

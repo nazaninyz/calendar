@@ -24,7 +24,7 @@ class DataBase
      
             $stmt = $this->conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $stmt->execute($params);
-            $inf = $stmt->fetch(PDO::FETCH_ASSOC);
+            $inf = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $inf;
   }
    public function Insert($query, array $params=[])

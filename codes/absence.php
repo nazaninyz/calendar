@@ -8,19 +8,6 @@ class Calendar extends DataBase
     public $date= array();
     public $counter;
     public $publicHolidays;
-    public function countAbsence()
-    {
-            $query="SELECT absdate,abs_id FROM user_absence where user_id like :user order by absdate";
-            $params= array(':user'=> $_SESSION['name']);
-            $inf=parent::Select($query,$params);
-            $i=0;
-            while ($result = $inf->fetch()) {
-                $this->absence[$i]=$result['abs_id'];
-                $this->date[$i]=$result['absdate'];
-            }
-            echo $inf;
-   
-    } 
     public function isPublicHoliday($date)
     {  
        $sts=1;
@@ -74,9 +61,10 @@ class Calendar extends DataBase
       $params= array(':absname' => $absname);
       $inf=parent::Select($query,$params);
       foreach($inf as $row) {
-        $row=$inf;
+      
+         $Aid=(int)$row['id'];
       }
-      $Aid=(int)$row['id'];
+     
       return $Aid;
    }
 
@@ -85,9 +73,9 @@ class Calendar extends DataBase
  public function getAbsence($absence, $month, $year) {
        $absid = $this->getAbsId($absence);
        $userid = $_SESSION['userid'];
-       $query ='SELECT datee from user_absence where user_id LIKE :userid AND abs_id LIKE :absid AND month LIKE :month AND year LIKE :year ';
+       $query ='SELECT datee from user_absence where user_id LIKE :userid AND abs_id LIKE :absid  AND month LIKE :month AND year LIKE :year';
        $params = array(':absid' => $absid, ':userid' => $userid, ':year' => $year, ':month' => $month);
-       $inf = parent::Select($query,$params);
+       $inf = parent::Select($query, $params);
        return $inf;
 }
 }
