@@ -1,8 +1,9 @@
 <?php
 session_start();
 require 'absence.php';
-if(isset($_GET['id'])) {
-       $month = $_GET['id'];
+if(isset($_GET['id']) && isset($_GET['slide'])) {
+       $absence = $_GET['id'];
+       $month=$_GET['slide'];
        $year=date('Y');
        $obj = new db\calendar();
        $inf = $obj->getAbsence($absence,$month,$year);
@@ -20,7 +21,7 @@ if(isset($_GET['id'])) {
             //  var_dump($makes);
             //  header('content-type:application/json');
              echo json_encode($makes);
-
+             
             //     var_dump($row);
        }
        
