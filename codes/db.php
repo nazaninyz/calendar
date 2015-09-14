@@ -32,7 +32,7 @@ class DataBase
       try {
              $stmt = $this->conn->prepare($query, array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION));
              $stmt->execute($params);
-             $sts='done';
+             $sts='Inserted successfully';
           } catch(PDOException $e) { 
                $sts=$e->getMessage();
             }

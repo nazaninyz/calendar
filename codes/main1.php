@@ -23,7 +23,7 @@ session_start();
     <script src="Script/jquery-2.1.3.min.js"></script>
   <script src="Script/bootstrap.min.js"></script>
 </head>
-<body style='background-image:url("1.png");'>
+<body style='background-image:url("summ.png");'>
    
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
@@ -63,8 +63,7 @@ session_start();
                                 
                             </li>
                             <li>
-                               <button type="button" id ='submit'class="btn btn-default"> submit </button><p id='stage' style='color:black;'></p>
-                           </li>
+                               <button type="button" id ='submit'class="btn btn-default"> submit </button>
                         </ul>
                     </div>
                 </div>
@@ -73,19 +72,28 @@ session_start();
         </div>
     </div>
   <a  name="services"></a>
+
+<script>
+
+
+
+</script>
   <script >
-     var startApp = function()
-   {
-      $.ajax ({
-        url: 'befabsence.php',
-        success: function(result) { alert(result);  },
-      })
-   }
       $(document).ready(function() {
             $("#submit").click(function(event){
                var date = $("#datepicker").val();
                var absence = $("#event").val();
-               $('#stage').load('befabsence.php', {'date':date,'absence':absence});
+                 $.ajax({
+                    type: 'get',
+                    url: 'befabsence.php',
+                    data: {date: date , absence: absence},
+
+                    success: function(data){ 
+                           alert(data);
+                    }
+
+                 })
+              
 
             });
          });

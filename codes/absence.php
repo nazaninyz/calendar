@@ -35,12 +35,12 @@ class Calendar extends DataBase
                 $month=(int)$date[0];
                 $day=(int)$date[1];
                 $year=(int)$date[2];
-                $query='SELECT user_id from user_absence where user_id like :userid and month like :month and day like :day and year like :year';
+                $query='SELECT user_id from userabsence where user_id like :userid and month like :month and day like :day and year like :year';
                 $params= array(':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
                 $sts=parent::Select($query, $params);
                 if(!$sts) {
                    $Aid=$this->getAbsId($absid);
-                   $sql="INSERT INTO user_absence (datee,month,year,abs_id, user_id, day) VALUES (:datee, :month, :year, :Aid, :userid, :day)";
+                   $sql="INSERT INTO userabsence (datee,month,year,abs_id, user_id, day) VALUES (:datee, :month, :year, :Aid, :userid, :day)";
                    $params= array(':datee' => $datee ,':Aid'=>$Aid ,':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
                    $inf=parent::Insert($sql,$params);
                    echo $inf;

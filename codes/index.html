@@ -28,7 +28,12 @@
                   type: 'POST',
                   url: 'lead.php',
                   data: {id_token: id_token,userID: userID},
-                  success: function(result) { alert(result); window.location.href = "main1.php";  },
+                  success: function(result) { 
+				 // if(result){
+				    window.location.href = "main1.php";
+			  //  } else
+				//      alert('wrong');
+				  },
     })},
          function(error) {
               alert(JSON.stringify(error, undefined, 2));
@@ -77,36 +82,34 @@
 
 
 </head>
-<body>
-  
-   <button type="button" class="btn btn-default navbar-btn">Sign in</button>
-   <div class="container">
-   <h1><a href="#">3FS.SI</a></h1>
-          <div class="row">
-            <div class="span4">
-            </div>
-            <div class="span8">
-              <div id="gSignInWrapper">
-      <span class="label">Sign in with:</span>
-      <div id="customBtn" class="customGPlusSignIn">
-         <span class="icon"></span>
-         <span class="buttonText" >Google</span>
-      </div>
-   </div>
-            </div>
+<body style='background-image:url("bc.jpg");'>
+  <div class="container" >
+     <h1><a href="#">3FS.SI</a></h1>
+     <div class="row">
+        <div class="span4">
+        </div>
+      <div class="span8">
+        <div id="gSignInWrapper">
+          <span class="label">Sign in with:</span>
+          <div id="customBtn" class="customGPlusSignIn">
+            <span class="icon"></span>
+            <span class="buttonText" >Google</span>
           </div>
-          <a href="#" onclick="signOut();">Sign out</a>
-                 <script src="https://apis.google.com/js/api:client.js"></script>
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
-     </script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-   <script>startApp();</script>
-   </div>
-        <script src="https://apis.google.com/js/api:client.js"></script>
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
-     </script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-   <script src="js/bootstrap.js"></script>
+        </div>
+      </div>
+    </div>
+    <a href="#" onclick="signOut();">Sign out</a>
+  </div>
+  <script src="https://apis.google.com/js/api:client.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+  </script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script>startApp();</script>
+  <script src="https://apis.google.com/js/api:client.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+  </script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 </body>
 
 

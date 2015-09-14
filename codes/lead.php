@@ -9,6 +9,7 @@ if(isset($_POST["id_token"])&&isset($_POST["userID"]))  {
     if($result) {
        $_SESSION['name']=$uid;
        $_SESSION['userid']=$obj->getUserId();
+	   echo true;
     }
 }
 else

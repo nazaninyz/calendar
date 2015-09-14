@@ -7,19 +7,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
     <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
-    <!-- jQuery -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media='screen' />
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="css/main.css">
 
+                        
 </head>
 <body>
 
 
  <nav class="navbar navbar-default" >
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -30,33 +30,17 @@
       <a class="navbar-brand" href="#">3FS.SI</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class='abs' id='illness'>illness</li>
-            <li class='abs' id='vacation'>vacation</li>
-            <li class='abs' id='personal'>personal</li>
-          </ul>
-        </li>
+        <li class="active"><a href="main1.php">set absence <span class="sr-only">(current)</span></a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
 
 <div class="container">
-			<!-- freshdesignweb top bar -->
             <div class="freshdesignweb-top">
                 <span class="right">
                     <a href="http://www.freshdesignweb.com/responsive-menu-css3-tutorial.html">
@@ -64,155 +48,155 @@
                     </a>
                 </span>
                 <div class="clr"></div>
-            </div><!--/ freshdesignweb top bar -->
+            </div>
 			<header>
 				<h1><span></span> </h1>
             </header>  
-   <div id="carousel" class="carousel slide" data-ride="carousel" >
+  
 
- <ol class="carousel-indicators" style="margin-buttum=100px;">
-    <li data-target="#carousel" data-slide-to="1" id='1' class="active"></li>
-    <li data-target="#carousel" data-slide-to="2" id='2' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="3" id='3' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="4" id='4' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="5" id='5' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="6" id='6' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="7" id='7' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="8" id='8' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="9" id='9' class='menu'  ></li>
-    <li data-target="#carousel" data-slide-to="10" id='10' class='menu'></li>
-    <li data-target="#carousel" data-slide-to="11" id='11' class='menu'></li>
-    <li data-target="#carousel" data-slide-to="12" id='12' class='menu'></li>
-  </ol>
 
    
      <div class="slider_container" >
-		<div class="flexslider">
+		<div class="flexslider" id='slide'>
 
 	      <ul class="slides" >
 	    	<li class='abs item active' id='1'>
-	    		<img src="janu.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Party Hairstyles</h2><p>Find the perfect hairstyle a la Lauren Conrad for every type of festive fête.</p></div>
+	    		<img src="janu.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>January absences:</h2><p id='1p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	<li class='abs item' id='2'>
-	    		<img src="images/slider/slide2.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Beautiful Hairstyle</h2><p>The latest hairstyles and instructions on how to create them here. Total Beauty has your complete hairstyles guide</p></div>
+	    		<img src="febr.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>february absences:</h2><p id='2p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 
 	    	<li class='abs item' id='3'>
-	    		<img src="images/slider/slide3.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Party Dresses</h2><p>If you are looking for something a little special for your big night out, check out Rare London's collection of stunning party dresses</p></div>
+	    		<img src="march.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>march absences:</h2><p id='3p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='4'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="apri.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>April absences:</h2><p id='4p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='5'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="may.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>May absences:</h2><p id='5p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='6'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="june.png" alt="" title=""/>
+	    		<div class="flex-caption"  style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>June absences:</h2><p id='6p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='7'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="jul.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
+                     <div class="caption_title_line"><h2>July absences:</h2><p id='7p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='8'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="aug.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
+                     <div class="caption_title_line"><h2>August absences:</h2><p id='8p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='9'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="sept.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
+                     <div class="caption_title_line"><h2>September absences:</h2><p id='9p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='10'>
 	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
+                     <div class="caption_title_line"><h2>October absences:</h2><p id='10p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='11'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="nov.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
+                     <div class="caption_title_line"><h2>November absences:</h2><p id='11p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    	 <li class='abs item' id='12'>
-	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
-	    		<div class="flex-caption">
-                     <div class="caption_title_line"><h2>Bodycon Dresses</h2><p>The bodycon dress is a key silhouette for this season's party girl; from sleek colour-block panelling to geometric prints the bodycon.</p></div>
+	    		<img src="12.png" alt="" title=""/>
+	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
+                     <div class="caption_title_line"><h2>December absences:</h2><p id='12p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
 	    </ul>
 	  </div>
    </div>
-
+  <section id="pricing-table">
  <div class='conrainer'>
    <div class="row">
-    <div class='col-md-3'>
-     </div>
-  
-     <div class='col-md-3'>
-     <ul>
-     <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> illness <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class='abs' id='illness'>illness</li>
-            <li class='abs' id='vacation'>vacation</li>
-            <li class='abs' id='personal'>personal</li>
-          </ul>
-    </li>
-    </ul>  
-     </div>
-     <div class='col-md-3'>
-     <ul>
-     <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> vacation <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class='abs' id='illness'>illness</li>
-            <li class='abs' id='vacation'>vacation</li>
-            <li class='abs' id='personal'>personal</li>
-          </ul>
-    </li>
-    </ul>  
-     </div>
-     <div class='col-md-3'>
-        <ul>
-     <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> personal <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class='abs' id='illness'>illness</li>
-            <li class='abs' id='vacation'>vacation</li>
-            <li class='abs' id='personal'>personal</li>
-          </ul>
-    </li>
-    </ul>  
-     </div>
-     <p id='info'></p>
+                         
+                         <div class="col-md-4 col-sm-12 col-xs-12">
+                     
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title">Vacation :</p><hr>
+                                </div>
+                                <div class="pricing-list">
+                                 <div class='inner' style=' height:150px; overflow: auto;'>
+                                    <ul id='vac'>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                       
+                            <div class="pricing-table">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title">Illness :</p><hr>
+
+                                </div>
+
+                                <div class="pricing-list">
+                                 <div class='inner' style=' height:150px; overflow: auto;'>
+                                    <ul id='ill'>
+                                      
+                                    </ul>
+
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                 
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title">Personal</p><hr>
+                                </div>
+
+                                <div class="pricing-list">
+                                 <div class='inner' style=' height:150px; overflow: auto;'>
+                                    <ul id='pers'>
+                                  
+                                    </ul>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+
 </div>
 </div>
+</section>
 </div>
-   </div>
+   
 
 
   
@@ -233,24 +217,13 @@
    <script>
   
        $(document).ready(function() {
-          var slide;
            $(".abs").click(function(){
                var id = $(this).attr('id');
-               for(var i=1 ; i<13 ; i++) {
-                 if( $('div.active').index() + 1)
-                 {
-                   slide= $('div.active').index() + 1;;
-                   break;
-                 }
-               }alert(id);
-               if(id != 0) {
-                
-                alert(slide);
+               if(id != 0) {       
                  $.ajax({
                    type: 'get',
                     url: 'showAbsence.php',
-                   data: {id: id, slide: slide},
-                  // contentType: 'application/json; charset=utf-8',
+                   data: {id: id},
                    dataType: 'json',
                    async : false,
                    error: function(jqXHR, textStatus, errorThrown) {
@@ -260,23 +233,53 @@
                        alert('Unexpected error.');
                      }
                    },
-                   success: function(data){
-                   // alert('hh');
-                    //alert(data);
-                        $('#select').empty();
-                        $('#select').append("<option value='0'>--date--</option>");
-                 //       $('#select').append('<option'+data[0].date+'></option>');
-                         
+                   success: function(data){ 
+                         $('#ill').empty();
+                         $('#vac').empty();
+                         $('#pers').empty();
+                         var count=0;
+                         var j=0; 
+                         var k=0;
+                         var z=0;
                         $.each(data,function(i,item) { 
-                       $('#select').append('<option>'+data[i].date+'</option>');
-                       })
-                     
+                        
+                    
+            
+						switch(data[i].kind)
+            {
+
+					   	case 'illness' :
+                {          
+                           j++;
+                           $('#ill').append('<li class="list-group-item-danger">'+j+'.'+data[i].date+'</li>');
+                           break;
+
                 }
 
-            })
-             }   
-         }); 
+              case 'vacation' :
+               {                           
+                           $('#vac').append('<li class="list-group-item-success">'+data[i].date+'</li>');
+                           break;
+               }
+              case 'personal' :
+               {                          
+                           $('#pers').append('<li class="list-group-item-warning">'+data[i].date+'</li>');
+                           break;
+               }
+            }					   
+					   
 
+             count=i+1;
+					   })
+                     
+                     
+                  $('#'+id+'p').text('number of absences in this month: '+count);
+
+                     }
+                
+            })
+            }
+         }); 
      })
 
 
@@ -285,11 +288,11 @@
 
 
         <script type="text/javascript" charset="utf-8">
-    var $ = jQuery.noConflict();
-    $(window).load(function() {
-    $('.flexslider').flexslider({
-          animation: "fade"
-    });
+         var $ = jQuery.noConflict();
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+            animation: "fade"
+       });
 	
 	$(function() {
 		$('.show_menu').click(function(){
