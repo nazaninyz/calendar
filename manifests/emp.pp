@@ -16,17 +16,23 @@ service { 'apache2':
 
 # install mysql-server package
 package { 'mysql-server':
-  require => Exec['apt-update'],        # require 'apt-update' before installing
-  ensure => installed,
+ require => Exec['apt-update'],        # require 'apt-update' before installing
+ ensure => installed,
 }
 
 # ensure mysql service is running
-service { 'mysql':
-  ensure => running,
-}
+ service { 'mysql':
+   ensure  => running,
+   require => Package['mysql-server'],
+ }
 
 # install php5 package
 package { 'php5':
   require => Exec['apt-update'],        # require 'apt-update' before installing
   ensure => installed,
 }
+
+exec { 'composer':                    # exec resource named 'apt-update'
+ command => '/usr/bin/php -r "readfile("https://getcomposer.org/installer");" | php'  # command this resource will run
+}
+

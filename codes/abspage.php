@@ -5,19 +5,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" media='screen' />
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="css/main.css">
-
-                        
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" media='screen' />
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">                      
 </head>
 <body>
-
-
  <nav class="navbar navbar-default" >
   <div class="container-fluid">
     <div class="navbar-header">
@@ -29,141 +25,129 @@
       </button>
       <a class="navbar-brand" href="#">3FS.SI</a>
     </div>
-
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="main1.php">set absence <span class="sr-only">(current)</span></a></li>
       </ul>
     </div>
   </div>
-</nav>
-
-
+ </nav>
 <div class="container">
-            <div class="freshdesignweb-top">
-                <span class="right">
-                    <a href="http://www.freshdesignweb.com/responsive-menu-css3-tutorial.html">
-
-                    </a>
-                </span>
-                <div class="clr"></div>
-            </div>
+      <div class="freshdesignweb-top">
+         <span class="right">
+            <a href="http://www.freshdesignweb.com/responsive-menu-css3-tutorial.html">
+            </a>
+         </span>
+         <div class="clr"></div>
+      </div>
 			<header>
 				<h1><span></span> </h1>
-            </header>  
+      </header>  
   
 
 
    
      <div class="slider_container" >
-		<div class="flexslider" id='slide'>
-
+		  <div class="flexslider" id='slide'> 
 	      <ul class="slides" >
 	    	<li class='abs item active' id='1'>
-	    		<img src="janu.png" alt="" title=""/>
+	    		<img src="imgs/janu.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>January absences:</h2><p id='1p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
 	    	<li class='abs item' id='2'>
-	    		<img src="febr.png" alt="" title=""/>
+	    		<img src="imgs/febr.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>february absences:</h2><p id='2p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
 
 	    	<li class='abs item' id='3'>
-	    		<img src="march.png" alt="" title=""/>
+	    		<img src="imgs/march.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>march absences:</h2><p id='3p'>click here to see this months absences</p></div>
-                </div>
+         </div>
 	    	</li>
-	    	 <li class='abs item' id='4'>
-	    		<img src="apri.png" alt="" title=""/>
+	    	<li class='abs item' id='4'>
+	    		<img src="imgs/apri.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>April absences:</h2><p id='4p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='5'>
-	    		<img src="may.png" alt="" title=""/>
+	    	<li class='abs item' id='5'>
+	    		<img src="imgs/may.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>May absences:</h2><p id='5p'>click here to see this months absences</p></div>
                 </div>
 	    	</li>
-	    	 <li class='abs item' id='6'>
-	    		<img src="june.png" alt="" title=""/>
+	    	<li class='abs item' id='6'>
+	    		<img src="imgs/june.png" alt="" title=""/>
 	    		<div class="flex-caption"  style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>June absences:</h2><p id='6p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='7'>
-	    		<img src="jul.png" alt="" title=""/>
+	    	<li class='abs item' id='7'>
+	    		<img src="imgs/jul.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,0.9)'>
                      <div class="caption_title_line"><h2>July absences:</h2><p id='7p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='8'>
-	    		<img src="aug.png" alt="" title=""/>
+	    	<li class='abs item' id='8'>
+	    		<img src="imgs/aug.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
                      <div class="caption_title_line"><h2>August absences:</h2><p id='8p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='9'>
-	    		<img src="sept.png" alt="" title=""/>
+	    	<li class='abs item' id='9'>
+	    		<img src="imgs/sept.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
                      <div class="caption_title_line"><h2>September absences:</h2><p id='9p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='10'>
+	    	<li class='abs item' id='10'>
 	    		<img src="images/slider/slide4.jpg" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
                      <div class="caption_title_line"><h2>October absences:</h2><p id='10p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='11'>
-	    		<img src="nov.png" alt="" title=""/>
+	    	<li class='abs item' id='11'>
+	    		<img src="imgs/nov.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
                      <div class="caption_title_line"><h2>November absences:</h2><p id='11p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
-	    	 <li class='abs item' id='12'>
-	    		<img src="12.png" alt="" title=""/>
+	    	<li class='abs item' id='12'>
+	    		<img src="imgs/12.png" alt="" title=""/>
 	    		<div class="flex-caption" style='background-color:rgba(0,0,0,1)'>
                      <div class="caption_title_line"><h2>December absences:</h2><p id='12p'>click here to see this months absences</p></div>
-                </div>
+          </div>
 	    	</li>
 	    </ul>
 	  </div>
    </div>
-  <section id="pricing-table">
- <div class='conrainer'>
-   <div class="row">
-                         
+  <section id="imgs/pricing-table">
+    <div class='conrainer'>
+      <div class="row">  
                          <div class="col-md-4 col-sm-12 col-xs-12">
-                     
                             <div class="pricing-table">
                                 <div class="pricing-header">
                                     <p class="pricing-title">Vacation :</p><hr>
                                 </div>
                                 <div class="pricing-list">
                                  <div class='inner' style=' height:150px; overflow: auto;'>
-                                    <ul id='vac'>
-                                       
+                                    <ul id='vac'>  
                                     </ul>
+                                 </div>
                                 </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-xs-12">
-                       
+                         </div>
+                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="pricing-table">
-                            <div class="pricing-table">
-                                <div class="pricing-header">
+                              <div class="pricing-table">
+                                 <div class="pricing-header">
                                     <p class="pricing-title">Illness :</p><hr>
-
-                                </div>
-
+                                 </div>
                                 <div class="pricing-list">
                                  <div class='inner' style=' height:150px; overflow: auto;'>
                                     <ul id='ill'>
@@ -257,13 +241,15 @@
                 }
 
               case 'vacation' :
-               {                           
-                           $('#vac').append('<li class="list-group-item-success">'+data[i].date+'</li>');
+               {           
+                           k++           
+                           $('#vac').append('<li class="list-group-item-success">'+k+'.'+data[i].date+'</li>');
                            break;
                }
               case 'personal' :
-               {                          
-                           $('#pers').append('<li class="list-group-item-warning">'+data[i].date+'</li>');
+               {                
+                           z++;          
+                           $('#pers').append('<li class="list-group-item-warning">'+z+'.'+data[i].date+'</li>');
                            break;
                }
             }					   

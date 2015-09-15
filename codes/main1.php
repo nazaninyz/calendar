@@ -14,16 +14,14 @@ session_start();
   <link rel="stylesheet" href="css/datepicker.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href="css/landing-page.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-  
+  <link href="css/landing-page.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   </head>
-    <script src="Script/jquery-2.1.3.min.js"></script>
+  <script src="Script/jquery-2.1.3.min.js"></script>
   <script src="Script/bootstrap.min.js"></script>
 </head>
-<body style='background-image:url("summ.png");'>
+<body style='background-image:url("imgs/ssbc.png");'>
    
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
@@ -48,7 +46,7 @@ session_start();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>calendar</h1>
+                        <h1 style='color:black;'>calendar</h1>
                         <hr class="intro-divider">
                         <ul class="list-inline ">
                             <li>
@@ -60,7 +58,6 @@ session_start();
                             </li>
                             <li>
                                <input type="text" id="datepicker" style='color:black;' value='Date...'>
-                                
                             </li>
                             <li>
                                <button type="button" id ='submit'class="btn btn-default"> submit </button>
@@ -68,16 +65,9 @@ session_start();
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
   <a  name="services"></a>
-
-<script>
-
-
-
-</script>
   <script >
       $(document).ready(function() {
             $("#submit").click(function(event){
@@ -91,15 +81,12 @@ session_start();
                     success: function(data){ 
                            alert(data);
                     }
-
                  })
-              
-
             });
          });
   </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
@@ -116,7 +103,7 @@ session_start();
   <script type="text/javascript" src="js/calendar.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.js"></script> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.js"></script> 
   <script type="text/javascript">
     $('#datepicker').datepicker('show');
   </script>

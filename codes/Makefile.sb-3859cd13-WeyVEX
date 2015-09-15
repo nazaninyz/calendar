@@ -1,0 +1,96 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red46\green46\blue49;\red190\green7\blue68;\red245\green245\blue247;
+}
+\margl1440\margr1440\vieww21440\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+all: init dev test docs\
+init:\
+\'a0 \'a0# - Install your dependencies via gem, maven, etc.\
+\'a0 \'a0# - Download sql dumps or copy configuration templates\
+\'a0 \'a0# \'a0 that a dev needs to get up and running.\
+\'a0 \'a0# - Install git hooks (more below)\
+\'a0\'a0\'a0\'a0composer update\
+\'a0\'a0\'a0\'a0composer install\
+test:\
+\'a0 \'a0# Run unit tests, code coverage, and linters\
+docs:\
+\'a0 \'a0# Generate your API documentation (you do have some, don't you?)\
+package:\
+\'a0 \'a0# Build a release tarball or jar or executable\
+dev:\
+\'a0\'a0\'a0\'a0vagrant halt\
+\'a0\'a0\'a0\'a0vagrant destroy\
+\'a0\'a0\'a0\'a0vagrant up\
+\'a0 \'a0# Start up a development server or process e.g.
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf3 \cb4 `\cb1 \
+\cb4 vagrant up\cb1 \
+\cb4 `\cb1 \
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+or
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf3 \cb4 `\cb1 \
+\cb4 node server.js\cb1 \
+\cb4 `\cb1 \
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+\
+\'a0 \'a0# Bonus: open that page in the user's browser automatically\
+install:\
+\'a0 \'a0# If your project builds an executable, place it in the
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf3 \cb4 `\cb1 \
+\cb4 $PATH\cb1 \
+\cb4 `\cb1 \
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+.\
+\'a0 \'a0# E.g. copy or symlink it into
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf3 \cb4 `\cb1 \
+\cb4 /usr/local/bin\cb1 \
+\cb4 `\cb1 \
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+\
+deploy:\
+\'a0 \'a0# If you have a simple deployment mechanism, like
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf3 \cb4 `\cb1 \
+\cb4 rsync\cb1 \
+\cb4 `\cb1 \
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+or
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf3 \cb4 `\cb1 \
+\cb4 s3cmd\cb1 \
+\cb4 `\cb1 \
+\pard\pardeftab720
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+, let\
+\'a0 \'a0# the Makefile take care of it.\
+.PHONY: test docs}

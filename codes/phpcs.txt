@@ -1,0 +1,102 @@
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/absence.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 5 WARNINGS AFFECTING 5 LINES
+----------------------------------------------------------------------
+  1 | WARNING | A file should declare new symbols (classes,
+    |         | functions, constants, etc.) and cause no other side
+    |         | effects, or it should execute logic with side
+    |         | effects, but should not do both. The first symbol is
+    |         | defined on line 5 and the first side effect is on
+    |         | line 4.
+ 39 | WARNING | Line exceeds 120 characters; contains 152 characters
+ 44 | WARNING | Line exceeds 120 characters; contains 151 characters
+ 45 | WARNING | Line exceeds 120 characters; contains 154 characters
+ 71 | WARNING | Line exceeds 120 characters; contains 154 characters
+----------------------------------------------------------------------
+
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/absenceTest.php
+----------------------------------------------------------------------
+FOUND 8 ERRORS AND 1 WARNING AFFECTING 6 LINES
+----------------------------------------------------------------------
+  1 | WARNING | [ ] A file should declare new symbols (classes,
+    |         |     functions, constants, etc.) and cause no other
+    |         |     side effects, or it should execute logic with
+    |         |     side effects, but should not do both. The first
+    |         |     symbol is defined on line 4 and the first side
+    |         |     effect is on line 2.
+  4 | ERROR   | [ ] Each interface must be in a namespace of at least
+    |         |     one level (a top-level vendor name)
+  4 | ERROR   | [ ] Interface name
+    |         |     "PHPUnit_Extensions_Database_DB_IDatabaseConnection"
+    |         |     is not in camel caps format
+  6 | ERROR   | [x] TRUE, FALSE and NULL must be lowercase; expected
+    |         |     "null" but found "NULL"
+  8 | ERROR   | [x] TRUE, FALSE and NULL must be lowercase; expected
+    |         |     "null" but found "NULL"
+ 13 | ERROR   | [ ] Each interface must be in a file by itself
+ 13 | ERROR   | [ ] Each class must be in a namespace of at least one
+    |         |     level (a top-level vendor name)
+ 26 | ERROR   | [x] Expected 1 blank line at end of file; 2 found
+ 26 | ERROR   | [x] The closing brace for the class must go on the
+    |         |     next line after the body
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 4 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/abspage.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 1 | WARNING | No PHP code was found in this file and short open tags
+   |         | are not allowed by this install of PHP. This file may
+   |         | be using short open tags but PHP does not allow them.
+----------------------------------------------------------------------
+
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/events.json.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 1 | WARNING | No PHP code was found in this file and short open tags
+   |         | are not allowed by this install of PHP. This file may
+   |         | be using short open tags but PHP does not allow them.
+----------------------------------------------------------------------
+
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/googleapitest.php
+----------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 21 | ERROR | [x] Spaces must be used to indent lines; tabs are not
+    |       |     allowed
+ 38 | ERROR | [x] Expected 1 newline at end of file; 0 found
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/main1.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 2 WARNINGS AFFECTING 2 LINES
+----------------------------------------------------------------------
+  8 | WARNING | Line exceeds 120 characters; contains 123 characters
+ 19 | WARNING | Line exceeds 120 characters; contains 134 characters
+----------------------------------------------------------------------
+
+
+FILE: /Users/nazanin/Desktop/employee calendar/codes/users.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 1 | WARNING | A file should declare new symbols (classes, functions,
+   |         | constants, etc.) and cause no other side effects, or
+   |         | it should execute logic with side effects, but should
+   |         | not do both. The first symbol is defined on line 5 and
+   |         | the first side effect is on line 4.
+----------------------------------------------------------------------
+
+Time: 56ms; Memory: 4.25Mb
+

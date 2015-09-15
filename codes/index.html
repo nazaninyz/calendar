@@ -29,10 +29,10 @@
                   url: 'lead.php',
                   data: {id_token: id_token,userID: userID},
                   success: function(result) { 
-				 // if(result){
+				  if(result){
 				    window.location.href = "main1.php";
-			  //  } else
-				//      alert('wrong');
+			    } else
+				     alert('wrong');
 				  },
     })},
          function(error) {
@@ -82,7 +82,7 @@
 
 
 </head>
-<body style='background-image:url("bc.jpg");'>
+<body style='background-image:url("imgs/bc.jpg");'>
   <div class="container" >
      <h1><a href="#">3FS.SI</a></h1>
      <div class="row">
