@@ -12,7 +12,8 @@ try {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
     } else {
-           throw new \Exception("can't get the date or event");
+           $Exception = "can't get the date or event";
+           echo $Exception;
     }
 } catch (Exception $e) {
                echo 'Caught exception: ',  $e->getMessage(), "\n";

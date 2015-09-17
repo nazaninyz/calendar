@@ -24,15 +24,17 @@
          function(googleUser) {
             var userID= googleUser.getBasicProfile().getEmail(); 
             var id_token = googleUser.getAuthResponse().id_token;
+            alert('hello');
                 $.ajax({
                   type: 'POST',
                   url: 'lead.php',
                   data: {id_token: id_token,userID: userID},
                   success: function(result) { 
 				  if(result){
+            alert(result);
 				    window.location.href = "main1.php";
 			    } else
-				     alert('wrong');
+				     alert("user doesn't exist");
 				  },
     })},
          function(error) {

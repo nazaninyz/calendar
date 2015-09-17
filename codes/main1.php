@@ -95,15 +95,9 @@ session_start();
     $( "#datepicker" ).datepicker();
   });
   </script>
-  <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
-  <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
+
   <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-  <script type="text/javascript" src="js/calendar.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.js"></script> 
+
   <script type="text/javascript">
     $('#datepicker').datepicker('show');
   </script>

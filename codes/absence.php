@@ -4,10 +4,7 @@ namespace db;
 require 'db.php';
 class Calendar extends DataBase
 {
-    public $absence= array();
-    public $date= array();
-    public $counter;
-    public $publicHolidays;
+   
     public function isPublicHoliday($date)
     {
         $sts=0;
@@ -36,19 +33,28 @@ class Calendar extends DataBase
                         $month=(int)$date[0];
                         $day=(int)$date[1];
                         $year=(int)$date[2];
-                        $query='SELECT user_id from userabsence where user_id like :userid and month like :month and day like :day and year like :year';
-                        $params= array(':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
-                        $sts=parent::Select($query, $params);
-            if (!$sts) {
-                           $Aid=$this->getAbsId($absid);
-                            $sql="INSERT INTO userabsence (datee,month,year,abs_id, user_id, day) VALUES (:datee, :month, :year, :Aid, :userid, :day)";
-                            $params= array(':datee' => $datee ,':Aid'=>$Aid ,':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
-                            $inf=parent::Insert($sql, $params);
+                        date_default_timezone_set('Europe/Ljubljana');
+                        $current=date('Y');
+                        if(!($year > $current)) {
+                            $query='SELECT user_id from userabsence where user_id like :userid and month like :month and day like :day and year like :year';
+                            $params= array(':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
+                            $sts=parent::Select($query, $params);
+                            if (!$sts) {
+                                $Aid=$this->getAbsId($absid);
+                                $sql="INSERT INTO userabsence (month,year,abs_id, user_id, day) VALUES (:month, :year, :Aid, :userid, :day)";
+                                $params= array(':Aid'=>$Aid ,':userid' =>$userid , ':month' => $month , ':year' => $year, ':day' => $day);
+                                $inf=parent::Insert($sql, $params);
+                                echo $inf;
+                            } else {
+                                  $inf='Inserted before';
+                                  echo $inf;
+                              }
+                        } else {
+                            $inf="you can't insert the year is not current year";
                             echo $inf;
-            } else {
-                             echo 'Inserted before';
-            }
+                        }
         }
+        return $inf;
     }
 
     private function getAbsId($absname)
@@ -68,7 +74,7 @@ class Calendar extends DataBase
     {
 
         $userid = $_SESSION['userid'];
-        $sql='Select kind, datee From absence , userabsence where abs_id = absence.id and user_id like :userid AND month LIKE :month AND year LIKE :year';
+        $sql='Select kind, day, year, month From absence , userabsence where abs_id = absence.id and user_id like :userid AND month LIKE :month AND year LIKE :year';
         $params = array(':userid' => $userid , ':year' => $year, ':month' => $month);
         $abs = parent::Select($sql, $params);
         return $abs;

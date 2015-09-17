@@ -11,7 +11,10 @@
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">                      
+  <link rel="stylesheet" type="text/css" href="css/main.css"> 
+  <link rel="stylesheet" href="css/datepicker.css">    
+  <script src="Script/jquery-2.1.3.min.js"></script>
+   <script src="Script/bootstrap.min.js"></script>                 
 </head>
 <body>
  <nav class="navbar navbar-default" >
@@ -28,6 +31,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="main1.php">set absence <span class="sr-only">(current)</span></a></li>
+        <li><button type="button" class="btn btn-default btn-lg" id="myBtn">number of absence</button></li>
       </ul>
     </div>
   </div>
@@ -43,10 +47,6 @@
 			<header>
 				<h1><span></span> </h1>
       </header>  
-  
-
-
-   
      <div class="slider_container" >
 		  <div class="flexslider" id='slide'> 
 	      <ul class="slides" >
@@ -180,26 +180,48 @@
 </div>
 </section>
 </div>
-   
-
-
   
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-   <script src="Script/jquery-2.1.3.min.js"></script>
-   <script src="Script/bootstrap.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-   <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
-   <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <!-- FlexSlider -->
-    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-   <script>
-  
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <div id="datetimepicker1" class="input-append date">
+      <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+      <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+</div>
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+   <script>    $(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  $(function() {
+     $( "#datepicker1" ).datepicker();
+  });
+  </script>
+
+ 
+  <script>
        $(document).ready(function() {
            $(".abs").click(function(){
                var id = $(this).attr('id');
@@ -226,74 +248,66 @@
                          var k=0;
                          var z=0;
                         $.each(data,function(i,item) { 
-                        
-                    
-            
 						switch(data[i].kind)
             {
-
 					   	case 'illness' :
                 {          
                            j++;
-                           $('#ill').append('<li class="list-group-item-danger">'+j+'.'+data[i].date+'</li>');
+                           $('#ill').append('<li class="list-group-item-danger">'+j+'. '+data[i].month+'/'+data[i].day+'/'+data[i].year+'</li>');
                            break;
-
                 }
-
               case 'vacation' :
                {           
                            k++           
-                           $('#vac').append('<li class="list-group-item-success">'+k+'.'+data[i].date+'</li>');
+                           $('#vac').append('<li class="list-group-item-success">'+k+'. '+data[i].month+'/'+data[i].day+'/'+data[i].year+'</li>');
                            break;
                }
               case 'personal' :
                {                
                            z++;          
-                           $('#pers').append('<li class="list-group-item-warning">'+z+'.'+data[i].date+'</li>');
+                           $('#pers').append('<li class="list-group-item-warning">'+z+'. '+data[i].month+'/'+data[i].day+'/'+data[i].year+'</li>');
                            break;
                }
             }					   
-					   
-
              count=i+1;
 					   })
-                     
-                     
                   $('#'+id+'p').text('number of absences in this month: '+count);
-
                      }
-                
             })
             }
          }); 
      })
-
-
-    </script> 
-
-
-
-        <script type="text/javascript" charset="utf-8">
-         var $ = jQuery.noConflict();
+  </script> 
+  <script type="text/javascript" charset="utf-8">
+        var $ = jQuery.noConflict();
         $(window).load(function() {
-          $('.flexslider').flexslider({
-            animation: "fade"
-       });
+           $('.flexslider').flexslider({
+              animation: "fade"
+           });
 	
-	$(function() {
-		$('.show_menu').click(function(){
-				$('.menu').fadeIn();
-				$('.show_menu').fadeOut();
-				$('.hide_menu').fadeIn();
-		});
-		$('.hide_menu').click(function(){
-				$('.menu').fadeOut();
-				$('.show_menu').fadeIn();
-				$('.hide_menu').fadeOut();
-		});
-	});
+	         $(function() {
+		          $('.show_menu').click(function(){
+				        $('.menu').fadeIn();
+				        $('.show_menu').fadeOut();
+				        $('.hide_menu').fadeIn();
+		         });
+		         $('.hide_menu').click(function(){
+			   	     $('.menu').fadeOut();
+				       $('.show_menu').fadeIn();
+				       $('.hide_menu').fadeOut();
+		         });
+	         });
+       });    
+  </script>
+
+
+ 
+  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+      <script type="text/javascript">
+  $('#datetimepicker1').datepicker({
+    language: 'pt-BR'
   });
 </script>
-
 </body>
 </html>
